@@ -260,19 +260,143 @@ public class TelaPrincipal extends JFrame {
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Salvar");
+		mntmNewMenuItem_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// menu Notas e Faltas		
+				
+				
+				
+				try {
+					
+					
+					
+					Leitor = new Leitor();
+					Leitor.setRGM(Integer.parseInt(txtRGM.getText()));
+					Leitor.setNomeAluno(txtNome.getText());
+					Leitor.setNascAluno(txtData.getText());
+					Leitor.setCPF(txtCPF.getText());
+					Leitor.setEmailAluno(txtEmail.getText());
+					Leitor.setEndAluno(txtEnd.getText());
+					Leitor.setMunAluno(txtMun.getText());
+					Leitor.setUfAluno((String)cmbUF.getSelectedItem());
+					Leitor.setCelAluno(Integer.parseInt(txtCelular.getText()));
+					Leitor.setCursoAluno(((String)cmbCurso.getSelectedItem()));
+					Leitor.setCampusAluno((String)cmbCampus.getSelectedItem());
+					Leitor.setPerAluno(btnGroup.toString());
+					Leitor.setDiscAluno((String)cmbDisciplina.getSelectedItem());
+					Leitor.setSemAluno((String)cmbSemestre.getSelectedItem());
+					Leitor.setNotaAluno(((String)cmbNota.getSelectedItem()));
+					Leitor.setFalAluno(Integer.parseInt(txtFalta.getText()));
+					
+					
+					
+					dao = new LeitorDao();
+					dao.salvar(Leitor);
+					
+					
+					System.out.print("Salvo com sucesso!");	
+						
+						
+					}
+					catch (Exception erro) {
+						
+						System.out.print(erro);
+					}
+					
+					
+						
+				}
+			});
 		mnNewMenu_1.add(mntmNewMenuItem_5);
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Alterar");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					
+					// menu Notas e Faltas
+					
+					Leitor = new Leitor();
+					Leitor.setRGM(Integer.parseInt(txtRGM.getText()));
+					Leitor.setNomeAluno(txtNome.getText());
+					Leitor.setNascAluno(txtData.getText());
+					Leitor.setCPF(txtCPF.getText());
+					Leitor.setEmailAluno(txtEmail.getText());
+					Leitor.setEndAluno(txtEnd.getText());
+					Leitor.setMunAluno(txtMun.getText());
+					Leitor.setUfAluno((String)cmbUF.getSelectedItem());
+					Leitor.setCelAluno(Integer.parseInt(txtCelular.getText()));
+					Leitor.setCursoAluno(((String)cmbCurso.getSelectedItem()));
+					Leitor.setCampusAluno((String)cmbCampus.getSelectedItem());
+					Leitor.setPerAluno(btnGroup.toString());
+					Leitor.setDiscAluno((String)cmbDisciplina.getSelectedItem());
+					Leitor.setSemAluno((String)cmbSemestre.getSelectedItem());
+					Leitor.setNotaAluno(((String)cmbNota.getSelectedItem()));
+					Leitor.setFalAluno(Integer.parseInt(txtFalta.getText()));
+					
+					
+					
+					dao = new LeitorDao();
+					dao.alterar(Leitor);
+					
+					
+					System.out.print("alterado com sucesso!");	
+						
+						
+					}
+					catch (Exception erro) {
+						
+						System.out.print(erro);
+					}
+				
+				
+				
+				
+				
+				
+				
+				
+				}
+			});	
+				
+			
 		mntmNewMenuItem_6.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, InputEvent.CTRL_DOWN_MASK));
 		mnNewMenu_1.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Excluir");
+		mntmNewMenuItem_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				// menu Notas e Faltas
+			
+				try {
+				dao = new LeitorDao();
+				int RGM = Integer.parseInt(txtRGM.getText());
+				dao.excluir(RGM);
+				
+				System.out.print("Excluido com sucesso");
+				
+				
+			}
+			catch (Exception erro) {
+				
+				System.out.print(erro);
+				
+			}
+		
+			
+			
+			
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_7);
 		
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Consultar");
 		mntmNewMenuItem_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				// menu Notas e Faltas
 				
 				try {
 					dao = new LeitorDao();
