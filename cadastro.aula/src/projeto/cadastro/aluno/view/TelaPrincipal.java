@@ -28,6 +28,9 @@ import projeto.cadastro.aluno.dao.LeitorDao;
 import projeto.cadastro.aluno.model.Leitor;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import javax.swing.UIManager;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EtchedBorder;
 
 
 public class TelaPrincipal extends JFrame {
@@ -129,13 +132,13 @@ public class TelaPrincipal extends JFrame {
 				dao.salvar(Leitor);
 				
 				
-				System.out.print("Salvo com sucesso!");	
+				System.out.println(" Salvo com sucesso!");	
 					
 					
 				}
 				catch (Exception erro) {
 					
-					System.out.print(erro);
+					System.out.println( erro);
 				}
 				
 				
@@ -177,13 +180,13 @@ public class TelaPrincipal extends JFrame {
 				dao.alterar(Leitor);
 				
 				
-				System.out.print("alterado com sucesso!");	
+				System.out.println(" alterado com sucesso!");	
 					
 					
 				}
 				catch (Exception erro) {
 					
-					System.out.print(erro);
+					System.out.println( erro);
 				}
 			
 			
@@ -213,11 +216,11 @@ public class TelaPrincipal extends JFrame {
 					lblNota.setText("Nota: " + Leitor.getNotaAluno());
 					lblFalta.setText("Falta: " + Leitor.getFalAluno());
 					
-					System.out.print("Mostrando");
+					System.out.println(" Mostrando");
 					
 				} catch (Exception erro) {
 					
-					System.out.print(erro);
+					System.out.print( erro);
 				}
 			}
 			
@@ -236,12 +239,12 @@ public class TelaPrincipal extends JFrame {
 					int RGM = Integer.parseInt(txtRGM.getText());
 					dao.excluir(RGM);
 					
-					System.out.print("Excluido com sucesso");
+					System.out.println(" Excluido com sucesso");
 					
 					
 				} catch (Exception erro) {
 					
-					System.out.print(erro);
+					System.out.println(erro);
 					
 				}
 			}
@@ -295,13 +298,13 @@ public class TelaPrincipal extends JFrame {
 					dao.salvar(Leitor);
 					
 					
-					System.out.print("Salvo com sucesso!");	
+					System.out.println(" Salvo com sucesso!");	
 						
 						
 					}
 					catch (Exception erro) {
 						
-						System.out.print(erro);
+						System.out.println( erro);
 					}
 					
 					
@@ -341,13 +344,13 @@ public class TelaPrincipal extends JFrame {
 					dao.alterar(Leitor);
 					
 					
-					System.out.print("alterado com sucesso!");	
+					System.out.println(" alterado com sucesso!");	
 						
 						
 					}
 					catch (Exception erro) {
 						
-						System.out.print(erro);
+						System.out.println( erro);
 					}
 				
 				
@@ -375,7 +378,7 @@ public class TelaPrincipal extends JFrame {
 				int RGM = Integer.parseInt(txtRGM.getText());
 				dao.excluir(RGM);
 				
-				System.out.print("Excluido com sucesso");
+				System.out.println(" Excluido com sucesso");
 				
 				
 			}
@@ -400,15 +403,15 @@ public class TelaPrincipal extends JFrame {
 				
 				try {
 					dao = new LeitorDao();
-					int RGM = Integer.parseInt(txtRGM.getText());
-					Leitor = dao.consultar(RGM);
+					int RGM1 = Integer.parseInt(txtRGM.getText());
+					Leitor = dao.consultar(RGM1);
 
 					lblPesq1.setText("RGM: " + Leitor.getRGM());
 					lblPesq1.setText("Nome: " + Leitor.getNomeAluno());
 					lblPesq2.setText("Curso: " + Leitor.getCursoAluno());
 					
 					
-					System.out.print("Mostrando");
+					System.out.println(" Mostrando");
 					
 				} catch (Exception erro) {
 					
@@ -571,27 +574,32 @@ public class TelaPrincipal extends JFrame {
 		contentPane_2.add(rbdNoturno);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b1.PNG"));
 		btnNewButton.setSelectedIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b1.PNG"));
 		btnNewButton.setBounds(0, 147, 90, 68);
 		contentPane_2.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b2.PNG"));
 		btnNewButton_1.setSelectedIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b2.PNG"));
 		btnNewButton_1.setActionCommand("");
 		btnNewButton_1.setBounds(88, 147, 89, 68);
 		contentPane_2.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("");
+		btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b3.PNG"));
 		btnNewButton_2.setSelectedIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b4.PNG"));
 		btnNewButton_2.setBounds(176, 147, 89, 68);
 		contentPane_2.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("");
+		btnNewButton_3.setIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b4.PNG"));
 		btnNewButton_3.setSelectedIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b4.PNG"));
 		btnNewButton_3.setBounds(264, 147, 89, 68);
 		contentPane_2.add(btnNewButton_3);
 		
 		JButton btnNewButton_3_1 = new JButton("");
+		btnNewButton_3_1.setIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b5.PNG"));
 		btnNewButton_3_1.setSelectedIcon(new ImageIcon("C:\\Users\\Usu\u00E1rio\\Pictures\\Bot\u00F5es\\b5.PNG"));
 		btnNewButton_3_1.setBounds(347, 147, 89, 68);
 		contentPane_2.add(btnNewButton_3_1);
@@ -626,27 +634,27 @@ public class TelaPrincipal extends JFrame {
 		
 		JLabel btnDisciplina = new JLabel("Disciplina");
 		btnDisciplina.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnDisciplina.setBounds(10, 92, 59, 16);
+		btnDisciplina.setBounds(10, 130, 59, 16);
 		contentPane_3.add(btnDisciplina);
 		
 		JLabel btnSemestre = new JLabel("Semestre");
 		btnSemestre.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnSemestre.setBounds(7, 135, 62, 16);
+		btnSemestre.setBounds(10, 157, 62, 16);
 		contentPane_3.add(btnSemestre);
 		
 		JLabel btnNota = new JLabel("Nota");
 		btnNota.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnNota.setBounds(189, 136, 46, 14);
+		btnNota.setBounds(191, 158, 46, 14);
 		contentPane_3.add(btnNota);
 		
 		JLabel btnFalta = new JLabel("Falta");
 		btnFalta.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnFalta.setBounds(294, 136, 46, 14);
+		btnFalta.setBounds(287, 158, 46, 14);
 		contentPane_3.add(btnFalta);
 		
 		txtFalta = new JTextField();
 		txtFalta.setColumns(10);
-		txtFalta.setBounds(338, 134, 86, 20);
+		txtFalta.setBounds(338, 156, 86, 20);
 		contentPane_3.add(txtFalta);
 		
 		txtListar = new JTextField();
@@ -656,55 +664,104 @@ public class TelaPrincipal extends JFrame {
 		
 		cmbDisciplina = new JComboBox();
 		cmbDisciplina.setModel(new DefaultComboBoxModel(new String[] {"Redes", "banco de dados", "programa\u00E7ao"}));
-		cmbDisciplina.setBounds(102, 90, 322, 22);
+		cmbDisciplina.setBounds(102, 128, 322, 22);
 		contentPane_3.add(cmbDisciplina);
 		
 		cmbSemestre = new JComboBox();
 		cmbSemestre.setModel(new DefaultComboBoxModel(new String[] {"primeiro", "segundo"}));
-		cmbSemestre.setBounds(102, 133, 77, 22);
+		cmbSemestre.setBounds(102, 155, 77, 22);
 		contentPane_3.add(cmbSemestre);
 		
 		cmbNota = new JComboBox();
 		cmbNota.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6"}));
-		cmbNota.setBounds(231, 133, 46, 22);
+		cmbNota.setBounds(231, 155, 46, 22);
 		contentPane_3.add(cmbNota);
 		
+		JPanel jpRGM = new JPanel();
+		jpRGM.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		jpRGM.setBounds(167, 16, 263, 40);
+		contentPane_3.add(jpRGM);
+		jpRGM.setLayout(null);
+		
 		lblPesq1 = new JLabel("");
-		lblPesq1.setBounds(173, 32, 251, 18);
-		contentPane_3.add(lblPesq1);
+		lblPesq1.setBounds(6, 16, 251, 18);
+		jpRGM.add(lblPesq1);
+		lblPesq1.setBackground(UIManager.getColor("Button.darkShadow"));
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_4.setBounds(54, 65, 376, 44);
+		contentPane_3.add(panel_4);
+		panel_4.setLayout(null);
 		
 		lblPesq2 = new JLabel("");
+		lblPesq2.setBounds(6, 16, 364, 22);
+		panel_4.add(lblPesq2);
 		lblPesq2.setBackground(Color.BLACK);
-		lblPesq2.setBounds(60, 59, 364, 22);
-		contentPane_3.add(lblPesq2);
 		
 		JPanel panel_3 = new JPanel();
 		tabbedPane.addTab("Boletim", null, panel_3, null);
 		panel_3.setLayout(null);
 		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_5.setBounds(30, 16, 184, 43);
+		panel_3.add(panel_5);
+		panel_5.setLayout(null);
+		
 		lblRGM = new JLabel("");
-		lblRGM.setBounds(39, 35, 172, 21);
-		panel_3.add(lblRGM);
+		lblRGM.setBounds(0, 11, 184, 21);
+		panel_5.add(lblRGM);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_6.setBounds(241, 16, 202, 43);
+		panel_3.add(panel_6);
+		panel_6.setLayout(null);
 		
 		lblNome = new JLabel("");
-		lblNome.setBounds(251, 35, 190, 21);
-		panel_3.add(lblNome);
+		lblNome.setBounds(0, 11, 202, 21);
+		panel_6.add(lblNome);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_7.setBounds(30, 75, 184, 43);
+		panel_3.add(panel_7);
+		panel_7.setLayout(null);
 		
 		lblCurso = new JLabel("");
-		lblCurso.setBounds(39, 80, 172, 21);
-		panel_3.add(lblCurso);
+		lblCurso.setBounds(0, 11, 184, 21);
+		panel_7.add(lblCurso);
+		
+		JPanel panel_8 = new JPanel();
+		panel_8.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_8.setBounds(241, 75, 203, 43);
+		panel_3.add(panel_8);
+		panel_8.setLayout(null);
 		
 		lblDisc = new JLabel("");
-		lblDisc.setBounds(250, 80, 191, 21);
-		panel_3.add(lblDisc);
+		lblDisc.setBounds(0, 11, 203, 21);
+		panel_8.add(lblDisc);
+		
+		JPanel panel_9 = new JPanel();
+		panel_9.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_9.setBounds(30, 136, 184, 43);
+		panel_3.add(panel_9);
+		panel_9.setLayout(null);
 		
 		lblNota = new JLabel("");
-		lblNota.setBounds(39, 131, 172, 21);
-		panel_3.add(lblNota);
+		lblNota.setBounds(0, 11, 184, 21);
+		panel_9.add(lblNota);
+		
+		JPanel panel_10 = new JPanel();
+		panel_10.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_10.setBounds(239, 136, 206, 43);
+		panel_3.add(panel_10);
+		panel_10.setLayout(null);
 		
 		lblFalta = new JLabel("");
-		lblFalta.setBounds(250, 131, 172, 21);
-		panel_3.add(lblFalta);
+		lblFalta.setBounds(0, 11, 202, 21);
+		panel_10.add(lblFalta);
 	}
 }
 
