@@ -16,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSeparator;
@@ -56,13 +57,15 @@ public class TelaPrincipal extends JFrame {
 	private Leitor Leitor;
 	private LeitorDao dao;
 	private JLabel lblPesq1;
-	private JLabel lblPesq2;
+	private JLabel lblPesq3;
 	private JLabel lblRGM;
 	private JLabel lblNome;
 	private JLabel lblCurso;
 	private JLabel lblDisc;
 	private JLabel lblNota;
 	private JLabel lblFalta;
+	private JLabel lblPesq2;
+	private JPanel panel_11;
 	
 	
 	
@@ -404,11 +407,11 @@ public class TelaPrincipal extends JFrame {
 				try {
 					dao = new LeitorDao();
 					int RGM1 = Integer.parseInt(txtRGM.getText());
-					Leitor = dao.consultar(RGM1);
+					Leitor = dao.consulta(RGM1);
 
 					lblPesq1.setText("RGM: " + Leitor.getRGM());
-					lblPesq1.setText("Nome: " + Leitor.getNomeAluno());
-					lblPesq2.setText("Curso: " + Leitor.getCursoAluno());
+					lblPesq2.setText("Nome: " + Leitor.getNomeAluno());
+					lblPesq3.setText("Curso: " + Leitor.getCursoAluno());
 					
 					
 					System.out.println(" Mostrando");
@@ -427,6 +430,15 @@ public class TelaPrincipal extends JFrame {
 		menuBar.add(mnNewMenu_2);
 		
 		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Sobre");
+		mntmNewMenuItem_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				JOptionPane.showMessageDialog(null,"Criado e desenvoldio pelo Grupo TECH NINJA ");
+				
+				
+			}
+		});
 		mnNewMenu_2.add(mntmNewMenuItem_9);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -634,7 +646,7 @@ public class TelaPrincipal extends JFrame {
 		
 		JLabel btnDisciplina = new JLabel("Disciplina");
 		btnDisciplina.setFont(new Font("Tahoma", Font.BOLD, 13));
-		btnDisciplina.setBounds(10, 130, 59, 16);
+		btnDisciplina.setBounds(10, 120, 59, 16);
 		contentPane_3.add(btnDisciplina);
 		
 		JLabel btnSemestre = new JLabel("Semestre");
@@ -662,11 +674,6 @@ public class TelaPrincipal extends JFrame {
 		contentPane_3.add(txtListar);
 		txtListar.setColumns(10);
 		
-		cmbDisciplina = new JComboBox();
-		cmbDisciplina.setModel(new DefaultComboBoxModel(new String[] {"Redes", "banco de dados", "programa\u00E7ao"}));
-		cmbDisciplina.setBounds(102, 128, 322, 22);
-		contentPane_3.add(cmbDisciplina);
-		
 		cmbSemestre = new JComboBox();
 		cmbSemestre.setModel(new DefaultComboBoxModel(new String[] {"primeiro", "segundo"}));
 		cmbSemestre.setBounds(102, 155, 77, 22);
@@ -679,25 +686,40 @@ public class TelaPrincipal extends JFrame {
 		
 		JPanel jpRGM = new JPanel();
 		jpRGM.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		jpRGM.setBounds(167, 16, 263, 40);
+		jpRGM.setBounds(167, 16, 96, 40);
 		contentPane_3.add(jpRGM);
 		jpRGM.setLayout(null);
 		
 		lblPesq1 = new JLabel("");
-		lblPesq1.setBounds(6, 16, 251, 18);
+		lblPesq1.setBounds(10, 11, 77, 18);
 		jpRGM.add(lblPesq1);
 		lblPesq1.setBackground(UIManager.getColor("Button.darkShadow"));
 		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_4.setBounds(54, 65, 376, 44);
-		contentPane_3.add(panel_4);
-		panel_4.setLayout(null);
+		panel_11 = new JPanel();
+		panel_11.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_11.setBounds(263, 16, 167, 40);
+		contentPane_3.add(panel_11);
+		panel_11.setLayout(null);
 		
 		lblPesq2 = new JLabel("");
-		lblPesq2.setBounds(6, 16, 364, 22);
-		panel_4.add(lblPesq2);
-		lblPesq2.setBackground(Color.BLACK);
+		lblPesq2.setBounds(10, 11, 137, 20);
+		panel_11.add(lblPesq2);
+		
+		cmbDisciplina = new JComboBox();
+		cmbDisciplina.setBounds(102, 118, 322, 22);
+		contentPane_3.add(cmbDisciplina);
+		cmbDisciplina.setModel(new DefaultComboBoxModel(new String[] {"Redes", "banco de dados", "programa\u00E7ao"}));
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBounds(54, 65, 376, 44);
+		contentPane_3.add(panel_4);
+		panel_4.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_4.setLayout(null);
+		
+		lblPesq3 = new JLabel("");
+		lblPesq3.setBounds(10, 11, 351, 22);
+		panel_4.add(lblPesq3);
+		lblPesq3.setBackground(Color.BLACK);
 		
 		JPanel panel_3 = new JPanel();
 		tabbedPane.addTab("Boletim", null, panel_3, null);
