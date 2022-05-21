@@ -83,12 +83,13 @@ public void excluir(int RGM) throws Exception {
 
 public void alterar(Leitor leitor) throws Exception {
 	try {
-		String sql = "UPDATE cursoCompleto SET nomeAluno =?, nascAluno=?,"
+		String sql = "UPDATE cursoCompleto SET RGM=?,nomeAluno =?, nascAluno=?,"
 				+ "     CPF=?, emailAluno=?, endAluno=?, munAluno=?,"
 				+ "		ufAluno=?, celAluno=?, cursoAluno=?, campusAluno=?,"
-				+ "     perAluno=?, discAluno=?,semAluno=?, notaAluno=?, falAluno=?" + "WHERE RGM=?";
+				+ "     perAluno=?, discAluno=?,semAluno=?, notaAluno=?, falAluno=? WHERE RGM=?";
 		
 		ps = conn.prepareStatement(sql);
+		
 		ps.setInt          (1, leitor.getRGM());
 		ps.setString       (2, leitor.getNomeAluno());
 		ps.setString       (3,leitor.getNascAluno());
@@ -105,6 +106,7 @@ public void alterar(Leitor leitor) throws Exception {
 		ps.setNString      (14, leitor.getSemAluno());
 		ps.setNString      (15,leitor.getNotaAluno());
 		ps.setInt          (16, leitor.getFalAluno());
+		ps.setInt          (17, leitor.getRGM());
 		
 		ps.executeUpdate();
 		
@@ -166,4 +168,51 @@ public Leitor consultar(int RGM) throws Exception {
 }
 
 
+public Leitor consulta1(int RGM) throws Exception {
+	
+	// botao consultar de notas e faltas;
+
+	try {
+
+		leitor = new Leitor();
+
+		String sql = "SELECT * FROM cursoCompleto WHERE RGM=? ";
+
+		ps = conn.prepareStatement(sql);
+		ps.setInt(1, RGM);
+		rs = ps.executeQuery();
+
+		
+		while (rs.next()) {
+
+			
+			leitor.setRGM         (rs.getInt(1));
+			leitor.setNomeAluno   (rs.getString(2));
+			leitor.setNascAluno   (rs.getString(3));
+			leitor.setCPF         (rs.getString(4));
+			leitor.setEmailAluno  (rs.getString(5));
+			leitor.setEndAluno    (rs.getString(6));
+			leitor.setMunAluno    (rs.getString(7));
+			leitor.setUfAluno     (rs.getString(8));
+			leitor.setCelAluno    (rs.getInt(9));
+			leitor.setCursoAluno  (rs.getString(10));
+			leitor.setCampusAluno (rs.getString(11));
+			leitor.setPerAluno    (rs.getString(12));
+			leitor.setDiscAluno   (rs.getString(13));
+			leitor.setSemAluno    (rs.getString(14));
+			leitor.setNotaAluno   (rs.getString(15));
+			leitor.setFalAluno    (rs.getInt(16));
+			
+
+			
+		}
+
+		return leitor;
+
+	} catch (Exception e) {
+		
+		
+		throw new Exception("Erro: " + e.getMessage());
+	}
+}
 }
